@@ -16,7 +16,7 @@ body {
   overflow-x: hidden;
   width: 100%;
   @include breakpoint(tablet) {
-    background-image: url("/img/hero.png");
+    background-image: url("../img/hero.png");
     background-repeat: no-repeat;
     background-position: 120% 0;
     background-size: 380px;
