@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+
+
+header.header-principal { 
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 14px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header__logo {
+      img {
+        width: 89px; // Específico para el logo
+        max-width: 100%;
+        height: auto;
+        
+        @include breakpoint(tablet) {
+          width: 111px; // Medio
+        }
+        
+        @include breakpoint(tablethorizontal) {
+          position: relative;
+          width: 150px; // Grande en desktop
+        }
+      }
+    }
+
+  nav {
+    margin-left: auto;
+    ul {
+      @include reset_list(); //llamamos al mixing q resetea los ul
+      @include breakpoint(tablethorizontal) {
+        margin-right: 110px;
+    }
+  }
+}
+
+  @include breakpoint(tablethorizontal) {
+    margin-bottom: 60px;
+  }
+      
+
+}
+}
+
+
+

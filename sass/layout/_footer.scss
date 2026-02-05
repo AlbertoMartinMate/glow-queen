@@ -1,0 +1,31 @@
+// _footer.scss
+@use '../abstracts' as *;
+
+footer {
+  background-color: $dark-blue;
+  padding: 36px 0 ;
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .footer__logo {
+      flex-shrink: 0; // evita que el elemento se comprima cuando el espacio es reducido
+      
+      img {
+        width: 89px; // Más pequeño que en el header
+        height: auto;
+      }
+    }
+
+    nav {
+      flex-shrink: 0;
+      margin-left: auto;
+      
+      ul {
+        @include reset_list();
+      }
+    }
+  }
+}

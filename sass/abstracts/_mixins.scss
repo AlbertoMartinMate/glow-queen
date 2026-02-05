@@ -1,0 +1,54 @@
+@use 'variables' as *;
+
+@mixin breakpoint($bp) {
+  @if $bp == tablet {
+    @media (min-width: $bp-tablet) {
+      @content;
+    }
+  }
+
+  @if $bp == tablethorizontal {
+    @media (min-width: $bp-tablet-horizontal) {
+      @content;
+    }
+  }
+
+  @if $bp == desktop {
+    @media (min-width: $bp-desktop) {
+      @content;
+    }
+  }
+
+  @if $bp == desktopxl {
+    @media (min-width: $bp-desktop-xl) {
+      @content;
+    }
+  }
+}
+
+@mixin reset_list() {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+@mixin button($bg-color: $dark-blue, $color: white) {
+    display: inline-block;
+    background-color: $bg-color;
+    color: $color;
+    padding: 16px 24px;
+    border-radius: 28px;
+    text-decoration: none;
+     &:hover {
+    background-color: #666ca3;
+  }
+}
+
+@mixin button-gradient($gradient) {
+  background: $gradient; // Usa 'background', no 'background-color'
+  color: white;
+  
+  &:hover {
+    opacity: 0.8; // Los gradientes no cambian de color, usa opacity
+  }
+}

@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+.btn {
+  @include button();
+
+  &--dark-blue {
+    background-color: $dark-blue;
+    color: white;
+  }
+
+  &--orange-pink {
+    @include button-gradient($gradient-pink-orange);
+  }
+  
+  &--pink-blue { // Tu segundo botón con gradiente
+    @include button-gradient($gradient-pink-blue);
+  }
+
+}
