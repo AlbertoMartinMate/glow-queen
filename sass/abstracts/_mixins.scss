@@ -27,9 +27,9 @@
 }
 
 @mixin reset_list() {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 @mixin button($bg-color: $dark-blue, $color: white) {
@@ -40,15 +40,7 @@
     border-radius: 28px;
     text-decoration: none;
      &:hover {
-    background-color: #666ca3;
-  }
-}
-
-@mixin button-gradient($gradient) {
-  background: $gradient; // Usa 'background', no 'background-color'
-  color: white;
-  
-  &:hover {
-    opacity: 0.8; // Los gradientes no cambian de color, usa opacity
+      opacity: 0.5;
+      text-decoration: none;
   }
 }

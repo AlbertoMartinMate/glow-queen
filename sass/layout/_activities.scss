@@ -2,94 +2,41 @@
 @use '../abstracts' as *;
 
 
-.activities {
-  display: flex;
-  flex-direction: column;
-  background: $gradient-activities;
 
-  &__header {
-    background: $gradient-pink-orange;
-    border-radius: 16px;
-    margin-bottom: 40px;
-    @include breakpoint(tablet) {
-      margin-bottom: -5; // ← QUITA el margen en tablet
-      display: flex;
-      align-items: center;
-  }
-
-    h2 {
-      font-size: 26px;
-      font-weight: 600;
-      line-height: 32px;
-      color: white;
-      padding: 25px 30px 25px 30px;
-      margin-bottom: 40px;
-
-    }
-  }
-
-  &__courses {
-    padding: 60px 25px 35px 25px;;
-    color: $dark-blue;
+.services {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 36%;
+    gap: 15px;
     background-color: white;
-    margin: 0 0 40px 0;
-    border-radius: 8px;
-    position: relative;
-    &__icon {
-      width: 56px;
-      height: 56px;
-      background: $gradient-pink-orange;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      position: absolute;
-      left: 30px;
-      top: -28px;
-      padding: 16px;
-      
+    border-radius: 16px;
+    padding: 20px 10px;
+
+    article {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        img {
+            background-color: $green;
+            margin-bottom: 10px;
+            padding: 15px;           // ← Espacio entre icono y borde
+            border-radius: 50%;      // ← Circular
+            width: 60px;             // ← Tamaño fijo
+            height: 60px;
+        }
+
+        h3 {
+            font-size: 36px;
+            font-weight: 500;
+            color: $dark-blue;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: $grey;
+        }
     }
-    h3 {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 10px;
-
-    }
-
-    p {
-      color: $grey;
-      line-height: 26px;
-      font-size: 17px;
-      font-weight: 400;
-      margin-bottom: 24px;
-
-    }
-
-    .activities__link {
-      color: $magent;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 20px;
-    }
-  }
-
-  .container {
-    @include breakpoint(tablet) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 50px;
-      gap: 30px;
-      align-items: stretch;
-      padding-bottom: 40px;
-    }
-    @include breakpoint(tablethorizontal) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-
-  
-
-  
 }
-
-

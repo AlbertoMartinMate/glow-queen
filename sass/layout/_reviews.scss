@@ -1,0 +1,49 @@
+// _footer.scss
+@use '../abstracts' as *;
+
+.reviews {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  position: relative;
+
+
+  // Estilos comunes para ambas reviews
+  &__1, &__2 {
+    background-color: rgba($grey-light, 0.5);
+    backdrop-filter: blur(8px);  // ← Efecto borroso
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+    width: 300px;   
+    height: 200px;
+    position: absolute;
+    z-index: 25;
+  }
+
+    // Posición review 1
+  &__1 {
+    right: -10px;
+    top: -490px;
+  }
+
+  // Posición review 2
+  &__2 {
+    right: 100px;
+    top: -250px;
+    
+  }
+
+  img {
+    margin-bottom: 10px;
+    width: 24px;           
+  }
+
+  &__autor {
+    font-weight: 600;
+    margin-top: 20px;
+    color: $dark-blue;
+  }
+}

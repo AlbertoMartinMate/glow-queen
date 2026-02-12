@@ -1,15 +1,61 @@
 @use '../abstracts' as *;
 
 .container {
-  max-width: 1200px; // O el ancho que quieras
+  position: relative;
+  background-color: $grey-light;
   width: 100%;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-left: auto;
-  margin-right: auto;
+  min-height: 100vh;
+  padding-left: 40px;   // ← Un poco más de padding
+  padding-right: 40px;
   overflow-x: hidden;
-  @include breakpoint(tablethorizontal) {
-    padding-left: 24px;
-    padding-right: 24px;
+
+  .bg-rectangulo {
+  position: absolute;
+  top: 0px;
+  right: -300px;
+  width: 780px;
+  height: 620px;
+  background-image: url("../img/rectangulo-verde.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+  
+
+  // Flor con opacity (DETRÁS)
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../img/vector-flor.svg");
+    background-repeat: no-repeat;
+    background-position: 800px 100px;
+    background-size: 380px;
+    opacity: 0.1;
+    z-index: 2;
+    pointer-events: none; //transparente a los clics
+  }
+
+  // Woman (ENCIMA de todo)
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;  // ← Cambiado de -50px a 0
+    width: 90%;  // ← O prueba con un valor mayor como 60%
+    height: 100%;
+    background-image: url("../img/woman.png");
+    background-repeat: no-repeat;
+    background-size: contain;  // ← Cambiado para que se vea completa
+    background-position: 30px top;  // ← Alineada a la derecha
+    z-index: 5;
+    pointer-events: none; //transparente a los clics
+  }
+
+  > * {
+    position: relative;
+    z-index: 10;  // ← El contenido entre medio
   }
 }
+

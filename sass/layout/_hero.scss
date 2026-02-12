@@ -2,144 +2,57 @@
 
 
 .hero {
-  width: 100%;
-  margin-bottom: 40px;
+  width: 50%;
+  margin-bottom: 20px;
   font-family: $primary-font;
-  @include breakpoint(tablethorizontal) {
-    margin-bottom: 70px;
-  }
 
   &__title {
-    font-size: 40px;
+    font-size: 54px;
     line-height: 1.6em;
     margin: 0;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
     color: $dark-blue;
-    font-weight: 800;
+    font-weight: 700;
 
   }
 
   &__subtitle{
-    width: 100%;
-    font-weight: 500;
-    font-size: 19px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
     margin: 0;
     margin-bottom: 28px;
     color: $grey;
-}
-
-  &__img {
-    text-align: center;
-    width: 80%;
-    margin-left: 10%;
-    position: relative;
-    margin-top: 20px;
-    z-index: 10;
-    @include breakpoint (tablet) {
-      width: 50%;
-      margin: 0;
-    }
-    @include breakpoint(tablethorizontal) {
-      height: 500px;
-    }
-    @include breakpoint(desktop) {
-      width: 400px;
-    }
   }
 
-  &__img-mobile {
-    @include breakpoint (tablet) {
-      display: none;
-    }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 32px;
 
-  }
-
-  &__number {
-    display: inline-block;
-    width: max-content;
-    background-color: white;
-    color: $dark-blue;
-    padding: 5px;
-    gap: 10px;
-    text-align: left;
-    position: absolute;
-    border-radius: 1rem;
-    box-shadow: 0 5px 10px #ccc;
-    span {
-      display: block;
-    }
-  }
-
-  &__number-title {
-    font-size: 14px;
-    color: $grey;
-    }
-
-  &__number-number {
-    color: $dark-blue;
-    font-size: 32px;
-    font-weight: 700;
-    }
-
-  &__number-1 {
-    padding: 16px 20px 16px 20px;
-    top: 0;
-    right: 0;
-    position: absolute;
-    @include breakpoint (tablet) {
-      right: 10px;
-      top: -60px;
-    }
-    @include breakpoint(tablethorizontal) {
-      top: 10px;
-      right: 120px;
-    }
-  }
-  
-
-  &__number-2 {
-    padding: 16px 45px 16px 20px;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    @include breakpoint (tablet) {
-      bottom: -20px;
-      left: 30px;
-    }
-    @include breakpoint(tablethorizontal) {
-      bottom: 62px;
-      left: 40px;
-    }
-  }
-
-
-  .container {
-    padding-top: 60px;
-    @include breakpoint(tablet) {
+    .video {
       display: flex;
-      justify-content: space-between;
-      padding-bottom: 80px;
-    }
-    @include breakpoint(tablethorizontal) {
-      padding-bottom: 0px;
-      padding-top: 0px;
       align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: $dark-blue;  // ← Aquí el color
+      font-weight: 500;
+
+      .play {
+        width: 48px;   // ← Tamaño del icono
+        height: 48px;
+        position: relative;
+        top: 0px;  // ← Ajusta este valor: negativo sube, positivo baja
+        right: 0px;
+        transform: translateY(-2px);  //le damos sombra
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 
 
-  &__content {
-    @include breakpoint(tablet) {
-    width: 75%;
-    }
-    @include breakpoint(tablethorizontal) {
-      width: 40%;
-
-    }
-    @include breakpoint(desktop) {
-      max-width: 460px;
-    }
-
-
-  }
 }

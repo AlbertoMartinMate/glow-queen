@@ -1,50 +1,104 @@
 @use '../abstracts' as *;
 
+.header { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 80px 0;
 
-header.header-principal { 
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 14px;
+  &__logo {
+    img {
+      width: 160px;
+      max-width: 100%;
+      height: auto;
+    }
+  }
 
-  .container {
+  &__menu {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    .header__logo {
-      img {
-        width: 89px; // Específico para el logo
-        max-width: 100%;
-        height: auto;
+    margin: 0 20px;
+    
+    ul {
+      @include reset_list();
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      
+      li {
+        position: relative;
         
-        @include breakpoint(tablet) {
-          width: 111px; // Medio
-        }
-        
-        @include breakpoint(tablethorizontal) {
-          position: relative;
-          width: 150px; // Grande en desktop
+        a {
+          text-decoration: none;
+          color: $dark-blue;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          
+          &:hover {
+            opacity: 0.3;
+          }
         }
       }
     }
-
-  nav {
-    margin-left: auto;
-    ul {
-      @include reset_list(); //llamamos al mixing q resetea los ul
-      @include breakpoint(tablethorizontal) {
-        margin-right: 110px;
+    
+    .dropdown__menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      background: white;
+      padding: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      
+      li {
+        padding: 8px 16px;
+        white-space: nowrap;
+      }
+    }
+    
+    .dropdown:hover .dropdown__menu {
+      display: block;
     }
   }
-}
 
-  @include breakpoint(tablethorizontal) {
-    margin-bottom: 60px;
-  }
+  &__login {
+    display: flex; 
+    align-items: center;
+
+    ul {
+      @include reset_list();
+      gap: 30px;
+      display: flex;
+      li{
+        padding: 0;
+      }
       
+      a {
+        text-decoration: none;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        color: $dark-blue;
+        height: 60px;
+
+        &:hover {
+            opacity: 0.3;
+            text-decoration: underline;
+          }
+        
+        img {
+          width: 20px;
+        }
+      }
+      .btn { 
+        @include button(); // ← ahora sí aplica el mixin 
+        color: white; // ← refuerzo por si acaso }
+        height: 50px;
+        margin-top: 5px;
+  }
+}
 
 }
+
 }
-
-
-
